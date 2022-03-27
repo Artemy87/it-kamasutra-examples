@@ -4,6 +4,7 @@ import './App.css';
 import OnOff from "./components/OnOff/OnOff";
 import {useState} from "react";
 import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 
 function App() {
 
@@ -16,29 +17,24 @@ function App() {
 
   return (
     <div className="App">
-      {/*<PageTitle title='This is App Component'/>*/}
-      {/*<PageTitle title='My friends'/>*/}
-      {/*<Rating value={3} />*/}
+        {/*<Rating value={3} />*/}
+        {/*<Rating value={0} />*/}
+        {/*<Rating value={2} />*/}
+        {/*<Rating value={5} />*/}
+        {/*<Rating value={1} />*/}
+        <UncontrolledRating />
+        <hr/>
       {/*<Accordion titleValue='Menu' collapsed={true}/> /!* true - список свернут, false - не свернут*!/*/}
       {/*<Accordion titleValue='Navigation' collapsed={false}/>*/}
-      {/*<Rating value={0} />*/}
-      {/*<Rating value={2} />*/}
-      {/*<Rating value={5} />*/}
-      {/*  <OnOff />*/}
         <UncontrolledAccordion titleValue={'Menu'}  />
         <UncontrolledAccordion titleValue={'Users'}  />
+        <hr/>
+      {/*  <OnOff />*/}
+
+        <hr/>
     </div>
   );
 }
 
-type PageTitlePropsType = {
-    title: string
-}
-
-function PageTitle(props: PageTitlePropsType) {
-  return (
-      <h1>{ props.title }</h1>
-  )
-}
 
 export default App;

@@ -32,7 +32,7 @@ function AccordionTitle(props:UncontrolledAccordionTitleType) {
     return (
         <>
             <span>{props.titleValue}</span>
-            <SuperButton onClick={props.onClickHandler}>show</SuperButton>
+            <SuperButton onClick={props.onClickHandler}>toggle</SuperButton>
         </>
     );
 }
