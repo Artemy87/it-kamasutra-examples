@@ -10,11 +10,11 @@ type UncontrolledStarType = {
     selected: boolean
 }
 
-export function UncontrolledRating() {
+export const UncontrolledRating = () => {
 
     const [star, setStar] = useState<number>(0)
 
-    const onclickHandler = (number:number) => {
+    const onClickHandler = (number:number) => {
         setStar(number)
     }
 
@@ -22,23 +22,23 @@ export function UncontrolledRating() {
         <div>
             <div>
                 <Star selected={star >= 1}/>
-                <SuperButton onClick={() => onclickHandler(1)}>1</SuperButton>
+                <SuperButton onClick={() => onClickHandler(1)}>1</SuperButton>
             </div>
             <div>
                 <Star selected={star >= 2}/>
-                <SuperButton onClick={() => onclickHandler(2)}>2</SuperButton>
+                <SuperButton onClick={() => onClickHandler(2)}>2</SuperButton>
             </div>
             <div>
                 <Star selected={star >= 3}/>
-                <SuperButton onClick={() => onclickHandler(3)}>3</SuperButton>
+                <SuperButton onClick={() => onClickHandler(3)}>3</SuperButton>
             </div>
             <div>
                 <Star selected={star >= 4}/>
-                <SuperButton onClick={() => onclickHandler(4)}>4</SuperButton>
+                <SuperButton onClick={() => onClickHandler(4)}>4</SuperButton>
             </div>
             <div>
-                <Star selected={star >= 5}/>
-                <SuperButton onClick={() => onclickHandler(5)}>5</SuperButton>
+                <Star selected={star === 5}/>
+                <SuperButton onClick={() => onClickHandler(5)}>5</SuperButton>
             </div>
         </div>
     )

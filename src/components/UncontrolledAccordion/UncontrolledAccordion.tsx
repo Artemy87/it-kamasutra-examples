@@ -12,7 +12,7 @@ type UncontrolledAccordionBodyType = {
     value:string
 }
 
-export function UncontrolledAccordion(props:UncontrolledAccordionType) {
+export const UncontrolledAccordion = (props:UncontrolledAccordionType) => {
 
     const [collapsed, setCollapsed] = useState(true);
 

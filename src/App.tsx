@@ -1,14 +1,15 @@
-import Accordion from './components/Accordion/Accordion';
+import { Accordion } from './components/Accordion/Accordion';
 import {Rating} from "./components/Rating/Rating";
 import './App.css';
-import OnOff from "./components/OnOff/OnOff";
-import {useState} from "react";
-import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
-import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import { UncontrolledOnOff } from "./components/OnOff/UncontrolledOnOff";
+import { UncontrolledAccordion } from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import { UncontrolledRating } from "./components/UncontrolledRating/UncontrolledRating";
+import { OnOff } from "./components/OnOff/OnOff";
+import { useState } from "react";
 
 function App() {
 
-    // const [light, setLight] = useState<boolean>(true)
+    const [on, setOn] = useState<boolean>(false);
     //
     // const changeLight = (isOn:boolean) => {
     //     let light = isOn;
@@ -22,16 +23,23 @@ function App() {
         {/*<Rating value={2} />*/}
         {/*<Rating value={5} />*/}
         {/*<Rating value={1} />*/}
+        <hr/>
+
         <UncontrolledRating />
         <hr/>
+
       {/*<Accordion titleValue='Menu' collapsed={true}/> /!* true - список свернут, false - не свернут*!/*/}
       {/*<Accordion titleValue='Navigation' collapsed={false}/>*/}
         <UncontrolledAccordion titleValue={'Menu'}  />
         <UncontrolledAccordion titleValue={'Users'}  />
         <hr/>
-      {/*  <OnOff />*/}
 
+        Controlled
+        <OnOff turnOn={on} setOn={setOn}/>
+        Uncontrolled
+        <UncontrolledOnOff />
         <hr/>
+
     </div>
   );
 }

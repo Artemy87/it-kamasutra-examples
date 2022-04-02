@@ -9,7 +9,7 @@ type AccordionBodyPropsType = {
     value:string
 }
 
-function Accordion(props:AccordionPropsType) {
+export const Accordion = (props:AccordionPropsType) => {
     return <div>
             <AccordionTitle titleValue={props.titleValue}/>
             {!props.collapsed
@@ -34,4 +34,3 @@ function AccordionBody(props: AccordionBodyPropsType) {
     );
 }
 
-export default Accordion;
