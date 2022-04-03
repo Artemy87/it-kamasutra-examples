@@ -1,4 +1,7 @@
 .red {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
     box-sizing: border-box;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -6,62 +9,57 @@
     background-color: #fd3636;
     border: 1px solid #900000;
     border-radius: 0.4em;
-    color: #ffffff;
     cursor: pointer;
+    color: #ffffff;
     -webkit-align-self: center;
     align-self: center;
-    font-size: 1rem;
     line-height: 1;
-    margin: 10px;
-    padding: 0.6em 1.5em;
+    margin: 5px;
+    padding: 0 1em;
+    height: 1.7rem;
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
 }
 
 .red:hover {
-    color: white;
+    color: #fd3636;
     outline: 0;
+    font-weight: bold;
+    border: 1px solid #acacac;
 }
 
 .red {
     -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+    transition: box-shadow 100ms ease-in-out, color 100ms ease-in-out;
 }
 .red:hover {
-    box-shadow: 0 0 40px 40px #697786 inset;
+    box-shadow: 0 0 40px 40px white inset;
 }
 
 
 .default {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
     box-sizing: border-box;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-color: red;
-    border: 1px solid #fbacac;
+    color: black;
     background-color: #f4f4f4;
-    border: 2px solid lightslategrey;
+    border: 1px solid lightslategrey;
     border-radius: 0.4em;
-    color: lightslategrey;
     cursor: pointer;
     -webkit-align-self: center;
-    -ms-flex-item-align: center;
     align-self: center;
-    font-size: 1rem;
-    font-weight: 400;
     line-height: 1;
-    margin: 10px;
-    padding: 0 0.7em;
-    height: 1.3rem;
+    margin: 5px;
+    padding: 5px;
+    height: 2rem;
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    font-size: 16px;
 }
 .default:hover {
     color: white;

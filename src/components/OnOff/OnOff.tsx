@@ -1,56 +1,48 @@
 import React from 'react';
+import SuperButton from "../../SuperButton/SuperButton";
 
 type OnOffType = {
-    turnOn: boolean
-    setOn:(value:boolean) => void
+    switchOn: boolean
+    setSwitchOn:(value:boolean) => void
+
 }
 
 export const OnOff = (props: OnOffType) => {
 
-    const onClickHandler = (value: boolean) => {
-        props.setOn(value)
-    }
-
     const onStyle = {
-        display: 'inline-block',
-        height: '30px',
-        width: '30px',
-        border: '1px solid black',
-        padding: '3px 5px',
-        margin: '2px',
-        background: props.turnOn ? 'lightGreen' : 'lightGrey',
+        // display: 'inline-block',
+        // border: '1px solid black',
+        // borderRadius: '5px',
+        // width: '50px',
+        // padding: '7px 10px',
+        // marginRight: '3px',
+        background: props.switchOn ? 'lightGreen' : 'lightGrey',
     }
     const offStyle = {
-        display: 'inline-block',
-        height: '30px',
-        width: '30px',
-        border: '1px solid black',
-        padding: '3px 5px',
-        margin: '2px',
-        background: props.turnOn ? 'lightGrey' : 'red',
+        // display: 'inline-block',
+        // border: '1px solid black',
+        // borderRadius: '5px',
+        // width: '50px',
+        // padding: '7px 10px',
+        // marginRight: '3px',
+        background: props.switchOn ? 'lightGrey' : 'red',
     }
     const indicatorStyle = {
         display: 'inline-block',
-        height: '30px',
-        width: '30px',
         border: '1px solid black',
         borderRadius: '50%',
-        padding: '3px 10px',
-        margin: '2px',
-        color: props.turnOn ? 'black' : 'white',
-        background: props.turnOn ? 'lightGreen' : 'red'
+        padding: '10px 10px',
+        color: props.switchOn ? 'black' : 'white',
+        background: props.switchOn ? 'lightGreen' : 'red'
     }
 
     return (
         <div>
-            <div
-                style={onStyle}
-                onClick={() => onClickHandler(true)}>On</div>
-            <div
-                style={offStyle}
-                onClick={() => onClickHandler(false)}>Off</div>
-            <div style={indicatorStyle}
-            >ind</div>
+            <SuperButton style={onStyle}
+                onClick={() => props.setSwitchOn(true)}>On</SuperButton>
+            <SuperButton style={offStyle}
+                onClick={() => props.setSwitchOn(false)}>Off</SuperButton>
+            <div style={indicatorStyle}>Indicator</div>
         </div>
     )
 }

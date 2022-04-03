@@ -1,47 +1,57 @@
-import { Accordion } from './components/Accordion/Accordion';
-import {Rating} from "./components/Rating/Rating";
 import './App.css';
+import {Rating, RatingType} from "./components/Rating/Rating";
+import { UncontrolledRating } from "./components/Rating/UncontrolledRating";
+import { Accordion } from './components/Accordion/Accordion';
+import { UncontrolledAccordion } from "./components/Accordion/UncontrolledAccordion";
 import { UncontrolledOnOff } from "./components/OnOff/UncontrolledOnOff";
-import { UncontrolledAccordion } from "./components/UncontrolledAccordion/UncontrolledAccordion";
-import { UncontrolledRating } from "./components/UncontrolledRating/UncontrolledRating";
 import { OnOff } from "./components/OnOff/OnOff";
 import { useState } from "react";
 
 function App() {
 
-    const [on, setOn] = useState<boolean>(false);
-    //
-    // const changeLight = (isOn:boolean) => {
-    //     let light = isOn;
-    //     setLight(light)
+    const [ratingValue, setRatingValue] = useState<RatingType>(0);
+    const [collapsed, setCollapsed] = useState<boolean>(true);
+    const [switchOn, setSwitchOn] = useState<boolean>(false);
+
+    // const setRatingValueHandler = (ratingValue: RatingType) => {
+    //     setRatingValue(ratingValue)
     // }
 
-  return (
-    <div className="App">
-        {/*<Rating value={3} />*/}
-        {/*<Rating value={0} />*/}
-        {/*<Rating value={2} />*/}
-        {/*<Rating value={5} />*/}
-        {/*<Rating value={1} />*/}
-        <hr/>
+    const setCollapsedHandler = () => {
+        setCollapsed(!collapsed)
+    }
 
-        <UncontrolledRating />
-        <hr/>
+    // const setTurnOnHandler = (value:boolean) => {
+    //     setTurnOn(value)
+    // }
 
-      {/*<Accordion titleValue='Menu' collapsed={true}/> /!* true - список свернут, false - не свернут*!/*/}
-      {/*<Accordion titleValue='Navigation' collapsed={false}/>*/}
-        <UncontrolledAccordion titleValue={'Menu'}  />
-        <UncontrolledAccordion titleValue={'Users'}  />
-        <hr/>
+    return (
+        <div className="App">
 
-        Controlled
-        <OnOff turnOn={on} setOn={setOn}/>
-        Uncontrolled
-        <UncontrolledOnOff />
-        <hr/>
+            <Rating rating={ratingValue}
+                    setRating={setRatingValue} />
 
-    </div>
-  );
+            <UncontrolledRating/>
+
+            <hr/>
+
+            <Accordion titleValue='Menu'
+                       collapsed={collapsed}
+                       setCollapsed={setCollapsedHandler}/>
+
+            <UncontrolledAccordion />
+
+            <hr/>
+
+            <OnOff switchOn={switchOn}
+                   setSwitchOn={setSwitchOn}/>
+
+            <UncontrolledOnOff />
+
+            <hr/>
+
+        </div>
+    );
 }
 
 

@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import SuperButton from "../../SuperButton/SuperButton";
 
 export const UncontrolledOnOff = () => {
 
@@ -9,45 +10,40 @@ export const UncontrolledOnOff = () => {
     }
 
     const onStyle = {
-        display: 'inline-block',
-        height: '30px',
-        width: '30px',
-        border: '1px solid black',
-        padding: '3px 5px',
-        margin: '2px',
+        // display: 'inline-block',
+        // border: '1px solid black',
+        // borderRadius: '5px',
+        // padding: '7px 10px',
+        // marginRight: '3px',
         background: on ? 'lightGreen' : 'lightGrey',
     }
     const offStyle = {
-        display: 'inline-block',
-        height: '30px',
-        width: '30px',
-        border: '1px solid black',
-        padding: '3px 5px',
-        margin: '2px',
+        // display: 'inline-block',
+        // border: '1px solid black',
+        // borderRadius: '5px',
+        // padding: '7px 10px',
+        // marginRight: '3px',
         background: on ? 'lightGrey' : 'red',
     }
     const indicatorStyle = {
         display: 'inline-block',
-        height: '30px',
-        width: '30px',
         border: '1px solid black',
         borderRadius: '50%',
-        padding: '3px 10px',
-        margin: '2px',
+        padding: '10px 10px',
         color: on ? 'black' : 'white',
         background: on ? 'lightGreen' : 'red'
     }
 
     return (
         <div>
-            <div
+            <SuperButton
                 style={onStyle}
-                onClick={() => onClickHandler(true)}>On</div>
-            <div
+                onClick={() => onClickHandler(true)}>Start</SuperButton>
+            <SuperButton
                 style={offStyle}
-                onClick={() => onClickHandler(false)}>Off</div>
+                onClick={() => onClickHandler(false)}>Stop</SuperButton>
             <div style={indicatorStyle}
-            >ind</div>
+            >Indicator</div>
         </div>
     )
 }

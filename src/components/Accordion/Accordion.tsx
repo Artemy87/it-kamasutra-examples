@@ -1,30 +1,32 @@
-type AccordionPropsType = {
+type PropsType = {
     titleValue:string
     collapsed:boolean
+    setCollapsed:() => void
 }
-type AccordionTitlePropsType = {
-    titleValue:string
-}
-type AccordionBodyPropsType = {
+type BodyPropsType = {
     value:string
 }
 
-export const Accordion = (props:AccordionPropsType) => {
-    return <div>
-            <AccordionTitle titleValue={props.titleValue}/>
-            {!props.collapsed
-                ? <AccordionBody value={props.titleValue}/>
-                : <div>---</div>}
-        </div>
-}
-
-function AccordionTitle(props:AccordionTitlePropsType) {
+export const Accordion = (props: PropsType) => {
     return (
-        <h3>{props.titleValue}</h3>
-    );
+        <div>
+            <AccordionTitle
+                titleValue={props.titleValue}
+                collapsed={props.collapsed}
+                setCollapsed={props.setCollapsed}/>
+            { !props.collapsed && <AccordionBody value={props.titleValue} /> }
+        </div>
+    )
 }
 
-function AccordionBody(props: AccordionBodyPropsType) {
+const AccordionTitle = (props: PropsType) => {
+    return (
+        <div onClick={ props.setCollapsed }
+        >{props.titleValue}</div>
+    )
+}
+
+const AccordionBody = (props: BodyPropsType) => {
     return (
         <ul>
             <li>{props.value}</li>
