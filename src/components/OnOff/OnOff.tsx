@@ -9,6 +9,14 @@ type OnOffType = {
 
 export const OnOff = (props: OnOffType) => {
 
+    const onSwitchHandler = () => {
+        props.setSwitchOn(true)
+    }
+
+    const offSwitchHandler = () => {
+        props.setSwitchOn(false)
+    }
+
     const onStyle = {
         // display: 'inline-block',
         // border: '1px solid black',
@@ -36,12 +44,13 @@ export const OnOff = (props: OnOffType) => {
         background: props.switchOn ? 'lightGreen' : 'red'
     }
 
+
     return (
         <div>
             <SuperButton style={onStyle}
-                onClick={() => props.setSwitchOn(true)}>On</SuperButton>
+                onClick={onSwitchHandler}>On</SuperButton>
             <SuperButton style={offStyle}
-                onClick={() => props.setSwitchOn(false)}>Off</SuperButton>
+                onClick={offSwitchHandler}>Off</SuperButton>
             <div style={indicatorStyle}>Indicator</div>
         </div>
     )

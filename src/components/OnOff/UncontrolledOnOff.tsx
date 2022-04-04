@@ -5,10 +5,6 @@ export const UncontrolledOnOff = () => {
 
     const [on, setOn] = useState(false);
 
-    const onClickHandler = (value: boolean) => {
-        setOn(value)
-    }
-
     const onStyle = {
         // display: 'inline-block',
         // border: '1px solid black',
@@ -34,16 +30,23 @@ export const UncontrolledOnOff = () => {
         background: on ? 'lightGreen' : 'red'
     }
 
+    const onClickHandler = () => {
+        setOn(true)
+    }
+
+    const offClickHandler = () => {
+        setOn(false)
+    }
+
     return (
         <div>
-            <SuperButton
-                style={onStyle}
-                onClick={() => onClickHandler(true)}>Start</SuperButton>
-            <SuperButton
-                style={offStyle}
-                onClick={() => onClickHandler(false)}>Stop</SuperButton>
-            <div style={indicatorStyle}
-            >Indicator</div>
+            <SuperButton style={onStyle} onClick={ onClickHandler }
+            >Start
+            </SuperButton>
+            <SuperButton style={offStyle} onClick={ offClickHandler }
+            >Stop
+            </SuperButton>
+            <div style={indicatorStyle}>Indicator</div>
         </div>
     )
 }

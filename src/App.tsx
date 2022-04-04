@@ -13,17 +13,9 @@ function App() {
     const [collapsed, setCollapsed] = useState<boolean>(true);
     const [switchOn, setSwitchOn] = useState<boolean>(false);
 
-    // const setRatingValueHandler = (ratingValue: RatingType) => {
-    //     setRatingValue(ratingValue)
-    // }
-
     const setCollapsedHandler = () => {
         setCollapsed(!collapsed)
     }
-
-    // const setTurnOnHandler = (value:boolean) => {
-    //     setTurnOn(value)
-    // }
 
     return (
         <div className="App">

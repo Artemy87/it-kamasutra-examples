@@ -14,22 +14,20 @@ export const UncontrolledAccordion = () => {
         </div>
 }
 
-
 type TitlePropsType = {
     title:string
     onClickHandler: () => void
 }
 
-function UncontrolledAccordionTitle(props:TitlePropsType) {
+const UncontrolledAccordionTitle = (props:TitlePropsType) => {
     return <span onClick={props.onClickHandler}>{props.title}</span>
 }
-
 
 type BodyPropsType = {
     value:string
 }
 
-function UncontrolledAccordionBody(props: BodyPropsType) {
+const UncontrolledAccordionBody = (props: BodyPropsType) => {
     return (
         <ul>
             <li>{props.value}</li>
