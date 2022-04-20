@@ -17,13 +17,14 @@ function App() {
         setCollapsed(!collapsed)
     }
 
+
     return (
         <div className="App">
 
             <Rating rating={ratingValue}
                     setRating={setRatingValue} />
 
-            <UncontrolledRating/>
+            <UncontrolledRating onChange={()=> console.log('clicked')}/>
 
             <hr/>
 
@@ -31,14 +32,14 @@ function App() {
                        collapsed={collapsed}
                        setCollapsed={setCollapsedHandler}/>
 
-            <UncontrolledAccordion />
+            <UncontrolledAccordion title={"Users"}/>
 
             <hr/>
 
             <OnOff switchOn={switchOn}
                    setSwitchOn={setSwitchOn}/>
 
-            <UncontrolledOnOff />
+            <UncontrolledOnOff onChange={() => console.log('click')}/>
 
             <hr/>
 

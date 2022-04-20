@@ -1,6 +1,9 @@
 type PropsType = {
     titleValue:string
     collapsed:boolean
+    /**
+     * Callback that is called when any item clicked
+     */
     setCollapsed:() => void
 }
 type BodyPropsType = {
