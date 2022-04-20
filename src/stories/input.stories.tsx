@@ -1,7 +1,6 @@
 import React, {ChangeEvent, useRef, useState} from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-
 export default {
   title: 'input',
   // component: OnOff,
@@ -11,6 +10,7 @@ export default {
 }
 
 // const Template: ComponentStory<typeof input> = (args) => <input {...args} />;
+
 
 export const UncontrolledInput = () => <input />
 
@@ -39,30 +39,37 @@ export const GetValueOfUncontrolledInputByButtonPress = () => {
   </div>
 }
 
-export const ControlledInputWithFixedValue = () => <input value={'incubator.by'}/>
+export const ControlledInput = () => {
+  const [value, setValue] = useState('')
+  const onChangeHandler = (e:ChangeEvent<HTMLInputElement>) => {
+    setValue(e.currentTarget.value)
+  }
+  return <input value={value} onChange={onChangeHandler}/>
+}
 
-//
-// export const Primary = Template.bind({});
-// Primary.args = {
-//   primary: true,
-//   label: 'Button',
-// };
-//
-// export const Secondary = Template.bind({});
-// Secondary.args = {
-//   label: 'Button',
-// };
-//
-// export const Large = Template.bind({});
-// Large.args = {
-//   size: 'large',
-//   label: 'Button',
-// };
-//
-// export const Small = Template.bind({});
-// Small.args = {
-//   size: 'small',
-//   label: 'Button',
-// };
-//
-//
+export const ControlledCheckbox = () => {
+  const [value, setValue] = useState(true)
+  const onChangeHandler = (e:ChangeEvent<HTMLInputElement>) => {
+    setValue(e.currentTarget.checked)
+  }
+  return <input type="checkbox" checked={value} onChange={onChangeHandler}/>
+}
+
+export const ControlledSelect = () => {
+  const [value, setValue] = useState<string | undefined>(undefined)
+
+  const onChangeHandler = (e:ChangeEvent<HTMLSelectElement>) => {
+    setValue(e.currentTarget.value)
+  }
+
+  return (
+      <select value={value} onChange={onChangeHandler}>
+        <option>none</option>
+        <option value={'1'}>Minsk</option>
+        <option value={'2'}>Moscow</option>
+        <option value={'3'}>Kiev</option>
+      </select>
+  )
+}
+
+export const ControlledInputWithFixedValue = () => <input value={'incubator.by'}/>
