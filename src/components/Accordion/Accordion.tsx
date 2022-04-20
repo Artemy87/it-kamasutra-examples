@@ -21,8 +21,7 @@ export const Accordion = (props: PropsType) => {
 
 const AccordionTitle = (props: PropsType) => {
     return (
-        <div onClick={ props.setCollapsed }
-        >{props.titleValue}</div>
+        <div onClick={ () => props.setCollapsed() }>{props.titleValue}</div>
     )
 }
 

@@ -1,9 +1,9 @@
 import './App.css';
 import {Rating, RatingType} from "./components/Rating/Rating";
-import { UncontrolledRating } from "./components/Rating/UncontrolledRating";
+import { UncontrolledRating } from "./components/UncontrolledRating/UncontrolledRating";
 import { Accordion } from './components/Accordion/Accordion';
-import { UncontrolledAccordion } from "./components/Accordion/UncontrolledAccordion";
-import { UncontrolledOnOff } from "./components/OnOff/UncontrolledOnOff";
+import { UncontrolledAccordion } from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import { UncontrolledOnOff } from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import { OnOff } from "./components/OnOff/OnOff";
 import { useState } from "react";
 
