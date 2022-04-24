@@ -1,40 +1,47 @@
-type PropsType = {
-    titleValue:string
-    collapsed:boolean
-    /**
-     * Callback that is called when any item clicked
-     */
-    setCollapsed:() => void
-}
-type BodyPropsType = {
-    value:string
+type ItemType = {
+    title: string
+    value: any
 }
 
-export const Accordion = (props: PropsType) => {
+type AccordionPropsType = {
+    titleValue: string
+    collapsed: boolean
+    onChange: ()=>void
+    items: ItemType[]
+    onClick: (value: any) => void
+}
+
+export const Accordion = (props: AccordionPropsType) => {
     return (
         <div>
             <AccordionTitle
-                titleValue={props.titleValue}
-                collapsed={props.collapsed}
-                setCollapsed={props.setCollapsed}/>
-            { !props.collapsed && <AccordionBody value={props.titleValue} /> }
+                title={props.titleValue}
+                onChange={props.onChange}
+            />
+            { !props.collapsed && <AccordionBody items={props.items} onClick={props.onClick}/> }
         </div>
     )
 }
 
-const AccordionTitle = (props: PropsType) => {
+type AccordionTitleType = {
+    title: string
+    onChange: () => void
+}
+
+const AccordionTitle = (props: AccordionTitleType) => {
     return (
-        <div onClick={ () => props.setCollapsed() }>{props.titleValue}</div>
+        <div onClick={ () => props.onChange() }>{props.title}</div>
     )
 }
 
-const AccordionBody = (props: BodyPropsType) => {
-    return (
-        <ul>
-            <li>{props.value}</li>
-            <li>{props.value}</li>
-            <li>{props.value}</li>
+type AccordionBodyPropsType = {
+    items: ItemType[]
+    onClick: (value: any) => void
+}
+
+const AccordionBody = (props: AccordionBodyPropsType) => {
+    return <ul>
+            {props.items.map((el, idx) => <li onClick={() => props.onClick(el.value)} key={idx}>{el.title}</li> )}
         </ul>
-    );
 }
 

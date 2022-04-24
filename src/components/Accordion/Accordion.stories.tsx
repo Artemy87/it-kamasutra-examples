@@ -28,10 +28,44 @@ const Template: ComponentStory<typeof Accordion> = (args) => <Accordion {...args
 // };
 
 const callback = action('Accordion mode change event fired: clicked')
+const onClickCallback = action('some item was clicked')
 
-// export const UsersUnCollapsedMode = () => <Accordion titleValue={'Users'} collapsed={false} setCollapsed={callback} />
-export const MenuCollapsedMode = () => <Accordion titleValue={'Menu'} collapsed={true} setCollapsed={callback} />
-export const UncontrolledMode = () => {
-    const [collapsed, setCollapsed] = useState<boolean>(false);
-    return <Accordion titleValue={'Users-'} collapsed={collapsed} setCollapsed={() => setCollapsed(!collapsed)} />
+export const MenuCollapsedMode = () =>
+    <Accordion
+        titleValue={'Menu'}
+        collapsed={true}
+        onChange={callback}
+        onClick={onClickCallback}
+        items={[
+            {title: 'Igor', value: 1},
+            {title: 'Valera', value: 2},
+            {title: 'Victor', value: 3}
+        ]}
+    />
+export const UserUncontrolledMode = () =>
+    <Accordion
+        titleValue={'Users'}
+        collapsed={false}
+        onChange={callback}
+        onClick={onClickCallback}
+        items={[
+            {title: 'Igor', value: 1},
+            {title: 'Valera', value: 2},
+            {title: 'Victor', value: 3}
+        ]}
+    />
+
+export const ModeChanging = () => {
+    const [value, setValue] = useState<boolean>(true);
+    return <Accordion
+        titleValue={'Users'}
+        collapsed={value}
+        onChange={() => setValue(!value)}
+        onClick={onClickCallback}
+        items={[
+            {title: 'Igor', value: 1},
+            {title: 'Valera', value: 2},
+            {title: 'Victor', value: 3}
+        ]}
+    />
 }

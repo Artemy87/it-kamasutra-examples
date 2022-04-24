@@ -28,9 +28,9 @@ function App() {
 
             <hr/>
 
-            <Accordion titleValue='Menu'
-                       collapsed={collapsed}
-                       setCollapsed={setCollapsedHandler}/>
+            {/*<Accordion titleValue='Menu'*/}
+            {/*           collapsed={collapsed}*/}
+            {/*           setCollapsed={setCollapsedHandler}/>*/}
 
             <UncontrolledAccordion title={"Users"}/>
 
