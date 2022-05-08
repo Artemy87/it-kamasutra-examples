@@ -6,6 +6,7 @@ import { UncontrolledAccordion } from "./components/UncontrolledAccordion/Uncont
 import { UncontrolledOnOff } from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import { OnOff } from "./components/OnOff/OnOff";
 import { useState } from "react";
+import {HelpsToReactMemo, LikeUseCallback} from "./stories/UseMemoUseUseCallback.stories";
 
 function App() {
 
@@ -42,6 +43,8 @@ function App() {
             <UncontrolledOnOff onChange={() => console.log('click')}/>
 
             <hr/>
+
+            <HelpsToReactMemo />
 
         </div>
     );

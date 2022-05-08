@@ -42,6 +42,7 @@ export const MenuCollapsedMode = () =>
             {title: 'Victor', value: 3}
         ]}
     />
+
 export const UserUncontrolledMode = () =>
     <Accordion
         titleValue={'Users'}
